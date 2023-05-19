@@ -3,6 +3,7 @@ from moviepy.editor import*
 from tkinter import *
 import tkinter.filedialog as tkfd
 import tkinter as tk
+import os
 
 window = Tk() # creating window
 window.geometry("700x300") # geometry of window
