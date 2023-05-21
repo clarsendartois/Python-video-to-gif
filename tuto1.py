@@ -1,3 +1,4 @@
 from moviepy.editor import VideoFileClip
-clip = VideoFileClip("Tuto/1.mp4")
-clip.write_gif("Output/Output.gif", fps=10)
+clip = VideoFileClip("./video/3.mp4")
+clip = clip.subclip(0, 5)
+clip.write_gif("./Output/test.gif", fps=10)
