@@ -8,7 +8,7 @@ import os
 window = Tk() # creating window
 window.geometry("700x300") # geometry of window
 window.title("TechVidvan") # tittle to window
-Label(window, text="Let's makw a GIF", font=("bold", 20)).pack() # Label
+Label(window, text="Let's make a GIF", font=("bold", 20)).pack() # Label
 
 
 def browseFiles():
