@@ -7,7 +7,14 @@ import os
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("blue")
 
+font_style_text1 = ("Bookman Old Style", 60, "bold")
+font_style_text2 = ("Bookman Old Style", 30)
+
 bg_fg_color = "#2b2b2b"
+text_color = "#FFFFFF"
+
+text_text1 = "Let's make a GIF"
+text_text2 = "Select a File"
 
 
 class VideoToGif:
@@ -17,12 +24,22 @@ class VideoToGif:
         self.window.resizable(0, 0)
         self.window.title("CLARSEN: Video To Gif")
 
-        self.frame_display = self.create_frame_display()
+        self.frame = self.create_frame()
+        self.text = self.create_text()
 
-    def create_frame_display(self):
+    def create_frame(self):
         main_frame = ctk.CTkFrame(
             self.window, width=690, height=290, corner_radius=10, fg_color=bg_fg_color)
         main_frame.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+
+    def create_text(self):
+        text1 = tk.Label(self.frame, text=text_text1, font=font_style_text1,
+                         background=bg_fg_color, foreground=text_color)
+        text1.place(relx=0.5, rely=0.5, x=-350, y=-250)
+
+        text2 = tk.Label(self.frame, text=text_text2, font=font_style_text2,
+                         background=bg_fg_color, foreground=text_color)
+        text2.place(relx=0.5, rely=0.5, x=-100, y=-150)
 
     def run(self):
         self.window.mainloop()
