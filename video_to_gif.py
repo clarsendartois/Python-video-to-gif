@@ -3,6 +3,7 @@ import tkinter.filedialog as fd
 import customtkinter as ctk
 from moviepy.editor import VideoFileClip
 import os
+import cv2 as cv
 
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("blue")
@@ -75,15 +76,23 @@ class VideoToGif:
 
     def create_make_gif(self):
         clip = VideoFileClip(filepath)
-        clip.write_gif("./test/test1.gif", fps=10)
+        clip.write_gif("./Output/gif.gif", fps=10)
 
         text4 = tk.Label(self.frame, text=text_text4, font=font_style_text3,
                          background=bg_fg_color, foreground=text_color4)
-        text4.place(relx=0.5, rely=0.5, x=-330, y=-25)
+        text4.place(relx=0.5, rely=0.5, x=-315, y=150)
 
         button3 = ctk.CTkButton(self.frame, text="Open your GIF", font=font_style_button3,
-                                text_color=text_button_color, border_width=2, width=10, command=self.create_make_gif)
-        button3.place(relx=0.5, rely=0.5, x=-135, y=20)
+                                text_color=text_button_color, border_width=2, width=10, command=self.create_open_gif)
+        button3.place(relx=0.5, rely=0.5, x=-80, y=110)
+
+    def create_open_gif(self):
+        gif = cv.VideoCapture("./Output/gif.gif")
+        while True:
+            is_true, frame = gif.read()
+            frame = cv.resize(frame, (1200, 700))
+            cv.imshow("GIF", frame)
+            cv.waitKey(100)
 
     def run(self):
         self.window.mainloop()
