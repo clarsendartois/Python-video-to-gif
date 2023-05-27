@@ -24,20 +24,25 @@ Label(window, text="Let's make a GIF", font=('bold', 20)).pack()  # label
 
 def browseFiles():
     global filepath
-    filename = filedialog.askopenfilename(title='select', filetypes=[
+    file = filedialog.askopenfile(title='select', mode="r", filetypes=[
         ("all video format", ".mov"),
         ("all video format", ".flv"),
         ("all video format", ".avi"),
         ("all video format", ".mp4"),
     ])
-    for filepath in filename:
-        filepath = os.path.basename(filepath)
+
+    filepath = os.path.abspath(file.name)
+
+    # if file:
+    #     filepath = os.path.abspath(file.name)
+    #     Label(window, text="The File is located at : " +
+    #           str(filepath), font=('Aerial 11')).pack()
 
 
 def create_gif():
     clip = VideoFileClip(filepath)
-    clip.write_gif("mygif.gif")  # making a gif
-    gif = VideoFileClip("mygif.gif")
+    clip.write_gif("./test/test3.gif", fps=10)  # making a gif
+    # gif = VideoFileClip(".//test1.gif", fps=10)
     Label(window, text="Gif Created and Saved").pack()
 
 
