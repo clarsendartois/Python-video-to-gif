@@ -14,3 +14,4 @@ Step4
 ![4](https://github.com/clarsendartois/video-to-gif/assets/116375601/083f5c98-e212-49b2-8ad4-fc0a06d12b7f)
 
 Step5
+![Untitled](https://github.com/clarsendartois/Python-video-to-gif/assets/116375601/7a1284ad-d222-4a0b-9933-7c3ce203f4b4)
