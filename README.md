@@ -14,4 +14,3 @@ Step4
 ![4](https://github.com/clarsendartois/video-to-gif/assets/116375601/083f5c98-e212-49b2-8ad4-fc0a06d12b7f)
 
 Step5
-![5](https://github.com/clarsendartois/video-to-gif/assets/116375601/da6937f3-3607-44a2-b0d5-d73aa21c14ed)
